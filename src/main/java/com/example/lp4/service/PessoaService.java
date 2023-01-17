@@ -28,7 +28,6 @@ public class PessoaService {
 
     @Transactional
     public Pessoa salvar(Pessoa Pessoa){
-        validar(Pessoa);
         return repository.save(Pessoa);
     }
 
@@ -38,7 +37,4 @@ public class PessoaService {
         repository.delete(Pessoa);
     }
 
-    public void validar(Pessoa Pessoa){
-
-    }
 }

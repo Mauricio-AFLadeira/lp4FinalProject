@@ -44,9 +44,6 @@ public class FornecedorService {
         if (fornecedor.getCnpj()==null || fornecedor.getCnpj().trim().equals("")){
             throw new RegraNegocioException("CNPJ não informado");
         }
-        if (fornecedor.getInscricaoEstadual()==null || fornecedor.getInscricaoEstadual().trim().equals("")){
-            throw new RegraNegocioException("Inscrição Estadual não informada");
-        }
         if (fornecedor.getEmail()==null || fornecedor.getEmail().trim().equals("")){
             throw new RegraNegocioException("email não informado");
         }

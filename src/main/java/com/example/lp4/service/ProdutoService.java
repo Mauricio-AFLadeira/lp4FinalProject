@@ -46,21 +46,6 @@ public class ProdutoService {
         if (produto.getValorUnitario()==null || produto.getValorUnitario()==0){
             throw new RegraNegocioException("preço não especificado ou sem valor");
         }
-        if (produto.getEstoqueMax()==null || produto.getEstoqueMax()==0){
-            throw new RegraNegocioException("informe o estoque máximo");
-        }
-        if (produto.getEstoqueMin()==null || produto.getEstoqueMin()==0){
-            throw new RegraNegocioException("informe o estoque mínimo");
-        }
-        if (produto.getEstoqueRessuprimento()==null || produto.getEstoqueRessuprimento()==0){
-            throw new RegraNegocioException("informe o estoque para ressuprimento");
-        }
-        if (produto.getQtdeEstoque()==null || produto.getQtdeEstoque()==0){
-            throw new RegraNegocioException("informe a quantidade no estoque");
-        }
-        if (produto.getQtdeEstoque() > produto.getEstoqueMax()){
-            throw new RegraNegocioException("quantidade no estoque maior que quantidade máxima");
-        }
         if (produto.getCategoria().getId()==null){
             throw new RegraNegocioException("categoria não relacionada ao produto");
         }

@@ -17,11 +17,10 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String login;
-    private String senha;
     private String telefone;
     private String email;
     private String nome;
+    private String senha;
 
     @OneToOne (cascade = CascadeType.ALL)
     private Endereco endereco;

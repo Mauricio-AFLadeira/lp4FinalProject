@@ -21,11 +21,7 @@ public class Produto {
     private String nome;
     private String descricao;
     private Integer valorUnitario;
-    private String imagem;
-    private Integer estoqueMax;
-    private Integer estoqueMin;
-    private Integer estoqueRessuprimento;
-    private Integer qtdeEstoque;
+    private Integer estoque;
 
     @ManyToOne
     private Categoria categoria;
