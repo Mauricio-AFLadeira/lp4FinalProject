@@ -20,6 +20,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/produtos")
 @RequiredArgsConstructor
 @Api("Api de Produto")
@@ -60,7 +61,7 @@ public class ProdutoController {
             @ApiResponse(code = 201, message = "Produto salvo"),
             @ApiResponse(code = 400, message = "Erro ao salvar produto")
     })
-    public ResponseEntity post(ProdutoDTO dto) {
+    public ResponseEntity post(@RequestBody ProdutoDTO dto) {
         try {
             Produto produto = converter(dto);
             Marca marca = marcaService.salvar(produto.getMarca());
