@@ -15,11 +15,7 @@ public class ProdutoDTO {
     private String nome;
     private String descricao;
     private Integer valorUnitario;
-    private String imagem;
-    private String estoqueMax;
-    private String estoqueMin;
-    private String estoqueRessuprimento;
-    private String qtdeEstoque;
+    private String estoque;
     private Long idCategoria;
     private Long idMarca;
 

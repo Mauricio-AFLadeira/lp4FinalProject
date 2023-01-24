@@ -1,5 +1,6 @@
 package com.example.lp4.api.controller;
 
+import com.example.lp4.api.dto.CategoriaDTO;
 import com.example.lp4.api.dto.MarcaDTO;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.Marca;
@@ -16,6 +17,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/marcas")
 @RequiredArgsConstructor
 @Api("API de Marca")
@@ -55,7 +57,7 @@ public class MarcaController {
             @ApiResponse(code = 201, message = "Marca salva"),
             @ApiResponse(code = 400, message = "Erro ao salvar marca")
     })
-    public ResponseEntity post(MarcaDTO dto) {
+    public ResponseEntity post(@RequestBody MarcaDTO dto) {
         try {
             Marca marca = converter(dto);
             marca = service.salvar(marca);

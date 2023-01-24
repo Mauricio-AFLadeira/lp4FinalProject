@@ -16,7 +16,7 @@ public class Fornecedor extends Pessoa{
 
     private String responsavel;
     private String cnpj;
-    private String dataEntrega;
+    private Date dataEntrega;
     private String empresa;
 }
 

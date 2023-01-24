@@ -1,6 +1,7 @@
 package com.example.lp4.api.controller;
 
 import com.example.lp4.api.dto.CategoriaDTO;
+import com.example.lp4.api.dto.FornecedorDTO;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.Categoria;
 import com.example.lp4.service.CategoriaService;
@@ -15,6 +16,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/categorias")
 @RequiredArgsConstructor
 @Api("API de Categoria")

@@ -6,13 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 
+import java.util.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class FornecedorDTO {
 
     private Long id;
-    private String login;
     private String senha;
     private String telefone;
     private String email;
@@ -20,7 +21,7 @@ public class FornecedorDTO {
     private String cnpj;
     private String responsavel;
     private String empresa;
-    private String inscricaoEstadual;
+    private Date dataEntrega;
     private String logradouro;
     private Integer numero;
     private String complemento;
