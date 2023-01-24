@@ -53,7 +53,7 @@ public class CategoriaController {
             @ApiResponse(code = 201, message = "Categoria salva"),
             @ApiResponse(code = 400, message = "Erro ao salvar categoria")
     })
-    public ResponseEntity post(CategoriaDTO dto) {
+    public ResponseEntity post(@RequestBody CategoriaDTO dto) {
         try {
             Categoria categoria = converter(dto);
             categoria = service.salvar(categoria);

@@ -1,5 +1,6 @@
 package com.example.lp4.api.controller;
 
+import com.example.lp4.api.dto.CategoriaDTO;
 import com.example.lp4.api.dto.FornecedorDTO;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.Endereco;
@@ -58,7 +59,7 @@ public class FornecedorController {
             @ApiResponse(code = 201, message = "Fornecedor salvo"),
             @ApiResponse(code = 400, message = "Erro ao salvar desconto")
     })
-    public ResponseEntity post(FornecedorDTO dto) {
+    public ResponseEntity post(@RequestBody FornecedorDTO dto){
         try {
             Fornecedor fornecedor = converter(dto);
             Endereco endereco = enderecoService.salvar(fornecedor.getEndereco());
