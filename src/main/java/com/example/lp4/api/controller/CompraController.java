@@ -1,6 +1,7 @@
 package com.example.lp4.api.controller;
 
 import com.example.lp4.api.dto.CompraDTO;
+import com.example.lp4.api.dto.MarcaDTO;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.Compra;
 import com.example.lp4.model.entity.Fornecedor;
@@ -18,6 +19,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/compras")
 @RequiredArgsConstructor
 @Api("API de Compra")
@@ -58,7 +60,7 @@ public class CompraController {
             @ApiResponse(code = 201, message = "Compra salva"),
             @ApiResponse(code = 400, message = "Erro ao salvar compra")
     })
-    public ResponseEntity post(CompraDTO dto) {
+    public ResponseEntity post(@RequestBody CompraDTO dto) {
         try {
             Compra compra = converter(dto);
             Fornecedor fornecedor = fornecedorService.salvar(compra.getFornecedor());
