@@ -16,9 +16,9 @@ public class FornecedorService {
 
     private FornecedorRepository repository;
 
-    public FornecedorService(FornecedorRepository repository){
-        this.repository=repository;
-    }
+//    public FornecedorService(FornecedorRepository repository){
+//        this.repository=repository;
+//    }
 
     public List<Fornecedor> getFornecedor(){
         return repository.findAll();

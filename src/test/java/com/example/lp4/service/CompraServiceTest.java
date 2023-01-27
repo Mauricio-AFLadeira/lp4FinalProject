@@ -22,7 +22,7 @@ class CompraServiceTest {
     }
 
     @Test
-    public void testValidarCompraSemData() {
+    public void naoDeveValidarCompraSemData() {
         Compra compra = new Compra();
         compra.setFornecedor(EasyMock.createMock(Fornecedor.class));
         EasyMock.expect(compra.getFornecedor().getId()).andReturn(1L);
@@ -34,7 +34,7 @@ class CompraServiceTest {
     }
 
     @Test
-    public void testValidarCompraSemFornecedor() {
+    public void naoDeveValidarCompraSemFornecedor() {
         Compra compra = new Compra();
         Date data = new Date();
         compra.setDataDaCompra(data);
@@ -48,7 +48,7 @@ class CompraServiceTest {
     }
 
     @Test
-    public void testValidarCompraValida() {
+    public void deveValidarCompraValida() {
         Compra compra = new Compra();
         Date data = new Date();
         compra.setDataDaCompra(data);
@@ -59,7 +59,7 @@ class CompraServiceTest {
     }
 
     @Test
-    public void testValidarCompraFornecedorIdNulo() {
+    public void naoDeveValidarCompraFornecedorIdNulo() {
         Compra compra = new Compra();
         Date data = new Date();
         compra.setDataDaCompra(data);
