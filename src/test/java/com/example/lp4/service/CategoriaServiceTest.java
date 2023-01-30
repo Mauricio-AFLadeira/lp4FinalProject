@@ -5,9 +5,11 @@ import com.example.lp4.model.entity.Categoria;
 import com.example.lp4.model.repository.CategoriaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
+import java.util.Optional;
+
+import static org.easymock.EasyMock.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CategoriaServiceTest {

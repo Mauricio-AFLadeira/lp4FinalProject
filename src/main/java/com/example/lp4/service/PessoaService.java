@@ -2,6 +2,7 @@ package com.example.lp4.service;
 
 import com.example.lp4.model.entity.Pessoa;
 import com.example.lp4.model.repository.PessoaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,11 +13,12 @@ import java.util.Optional;
 @Service
 public class PessoaService {
 
+    @Autowired
     private PessoaRepository repository;
 
-    public PessoaService(PessoaRepository repository){
-        this.repository=repository;
-    }
+//    public PessoaService(PessoaRepository repository){
+//        this.repository=repository;
+//    }
 
     public List<Pessoa> getPessoa(){
         return repository.findAll();

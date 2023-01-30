@@ -3,6 +3,7 @@ package com.example.lp4.service;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.ItemCompra;
 import com.example.lp4.model.repository.ItemCompraRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,11 +14,12 @@ import java.util.Optional;
 @Service
 public class ItemCompraService {
 
+    @Autowired
     private ItemCompraRepository repository;
 
-    public ItemCompraService(ItemCompraRepository repository){
-        this.repository=repository;
-    }
+//    public ItemCompraService(ItemCompraRepository repository){
+//        this.repository=repository;
+//    }
 
     public List<ItemCompra> getItemCompra(){
         return repository.findAll();

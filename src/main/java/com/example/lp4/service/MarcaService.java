@@ -3,6 +3,7 @@ package com.example.lp4.service;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.Marca;
 import com.example.lp4.model.repository.MarcaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,11 +14,12 @@ import java.util.Optional;
 @Service
 public class MarcaService {
 
+    @Autowired
     private MarcaRepository repository;
 
-    public MarcaService(MarcaRepository repository){
-        this.repository=repository;
-    }
+//    public MarcaService(MarcaRepository repository){
+//        this.repository=repository;
+//    }
 
     public List<Marca> getMarcas() {
         return repository.findAll();

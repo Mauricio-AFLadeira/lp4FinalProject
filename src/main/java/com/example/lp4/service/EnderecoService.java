@@ -3,6 +3,7 @@ package com.example.lp4.service;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.Endereco;
 import com.example.lp4.model.repository.EnderecoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,11 +12,13 @@ import java.util.Optional;
 
 @Service
 public class EnderecoService {
+
+    @Autowired
     private EnderecoRepository repository;
 
-    public EnderecoService(EnderecoRepository repository) {
-        this.repository = repository;
-    }
+//    public EnderecoService(EnderecoRepository repository) {
+//        this.repository = repository;
+//    }
 
     public List<Endereco> getEnderecos() {
         return repository.findAll();

@@ -4,6 +4,7 @@ package com.example.lp4.service;
 import com.example.lp4.exception.RegraNegocioException;
 import com.example.lp4.model.entity.Fornecedor;
 import com.example.lp4.model.repository.FornecedorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,11 +15,12 @@ import java.util.Optional;
 @Service
 public class FornecedorService {
 
+    @Autowired
     private FornecedorRepository repository;
 
-    public FornecedorService(FornecedorRepository repository){
-        this.repository=repository;
-    }
+//    public FornecedorService(FornecedorRepository repository){
+//        this.repository=repository;
+//    }
 
     public List<Fornecedor> getFornecedor(){
         return repository.findAll();
