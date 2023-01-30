@@ -15,9 +15,9 @@ public class MarcaService {
 
     private MarcaRepository repository;
 
-//    public MarcaService(MarcaRepository repository){
-//        this.repository=repository;
-//    }
+    public MarcaService(MarcaRepository repository){
+        this.repository=repository;
+    }
 
     public List<Marca> getMarcas() {
         return repository.findAll();

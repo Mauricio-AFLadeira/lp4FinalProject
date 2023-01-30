@@ -71,7 +71,7 @@ public class CategoriaController {
             @ApiResponse(code = 200, message = "Categoria alterada"),
             @ApiResponse(code = 404, message = "Categoria não encontrada")
     })
-    public ResponseEntity put(@PathVariable("id") @ApiParam("Id da categoria") Long id, CategoriaDTO dto) {
+    public ResponseEntity put(@PathVariable("id") @ApiParam("Id da categoria") Long id,@RequestBody CategoriaDTO dto) {
         if (!service.getCategoriaById(id).isPresent()) {
             return new ResponseEntity("Categoria não encontrada", HttpStatus.NOT_FOUND);
         }

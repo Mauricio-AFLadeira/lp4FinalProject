@@ -82,7 +82,7 @@ public class ItemCompraController {
             @ApiResponse(code = 200, message = "Item compra alterado"),
             @ApiResponse(code = 404, message = "Item compra não encontrado")
     })
-    public ResponseEntity put(@PathVariable("id") @ApiParam("Id do Item compra") Long id, ItemCompraDTO dto) {
+    public ResponseEntity put(@PathVariable("id") @ApiParam("Id do Item compra") Long id,@RequestBody ItemCompraDTO dto) {
         if (!service.getItemCompraById(id).isPresent()) {
             return new ResponseEntity("Item não encontrado", HttpStatus.NOT_FOUND);
         }

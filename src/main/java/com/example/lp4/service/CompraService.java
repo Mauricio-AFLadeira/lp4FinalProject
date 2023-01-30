@@ -15,9 +15,9 @@ public class CompraService {
 
     private CompraRepository repository;
 
-//    public CompraService(CompraRepository repository){
-//        this.repository=repository;
-//    }
+   public CompraService(CompraRepository repository){
+       this.repository=repository;
+   }
 
     public List<Compra> getCompra(){
         return repository.findAll();

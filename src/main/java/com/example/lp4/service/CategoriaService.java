@@ -15,9 +15,9 @@ public class CategoriaService {
 
     private CategoriaRepository repository;
 
-//    //public CategoriaService(CategoriaRepository repository){
-//        this.repository=repository;
-//    }
+    public CategoriaService(CategoriaRepository repository){
+        this.repository=repository;
+    }
 
     public List<Categoria> getCategoria(){
         return repository.findAll();

@@ -77,7 +77,7 @@ public class FornecedorController {
             @ApiResponse(code = 200, message = "Fornecedor alterado"),
             @ApiResponse(code = 404, message = "Fornecedor não encontrado")
     })
-    public ResponseEntity put(@PathVariable("id") @ApiParam("Id do Fornecedor") Long id, FornecedorDTO dto) {
+    public ResponseEntity put(@PathVariable("id") @ApiParam("Id do Fornecedor") Long id,@RequestBody FornecedorDTO dto) {
         if (!service.getFornecdorById(id).isPresent()) {
             return new ResponseEntity("Fornecedor não encontrado", HttpStatus.NOT_FOUND);
         }

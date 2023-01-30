@@ -73,7 +73,7 @@ public class MarcaController {
             @ApiResponse(code = 200, message = "Marca alterada"),
             @ApiResponse(code = 404, message = "Marca não encontrada")
     })
-    public ResponseEntity atualizar(@PathVariable("id") @ApiParam("Id da Marca") Long id, MarcaDTO dto) {
+    public ResponseEntity atualizar(@PathVariable("id") @ApiParam("Id da Marca") Long id, @RequestBody MarcaDTO dto) {
         if (!service.getMarcaById(id).isPresent()) {
             return new ResponseEntity("Marca não encontrada", HttpStatus.NOT_FOUND);
         }
